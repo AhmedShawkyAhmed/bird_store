@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashView: View {
+struct SplashScreen: View {
     var body: some View {
         ZStack {
             // Top
@@ -76,5 +76,5 @@ struct SplashView: View {
 }
 
 #Preview {
-    SplashView()
+    SplashScreen()
 }
