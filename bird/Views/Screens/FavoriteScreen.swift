@@ -9,7 +9,11 @@ import SwiftUI
 
 struct FavoriteScreen: View {
     var body: some View {
-        Text("Favorite Screen")
+        BackgroundView(
+            spacing: 0,
+            content: {
+            Text("Favorite Screen")
+        })
     }
 }
 

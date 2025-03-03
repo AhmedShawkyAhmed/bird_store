@@ -29,7 +29,7 @@ struct MainButton: View {
                     endPoint: .trailing
                 ))
                 .cornerRadius(100)
-                .shadow(color:Color.black.opacity(0.2),radius: 10)
+                .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 4)
         }
         .padding(.horizontal, 30)
     }

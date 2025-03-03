@@ -9,7 +9,11 @@ import SwiftUI
 
 struct NotificationScreen: View {
     var body: some View {
-        Text("Notifications Screen")
+        BackgroundView(
+            spacing: 0,
+            content: {
+            Text("Notifications Screen")
+        })
     }
 }
 

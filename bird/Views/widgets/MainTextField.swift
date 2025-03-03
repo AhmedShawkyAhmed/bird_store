@@ -9,16 +9,48 @@ import SwiftUI
 
 struct MainTextField: View {
     var hint: String
-    var horizontalPadding = 30.0
+    var horizontalPadding: CGFloat = 30.0
+    var height: CGFloat = 50
+    var prefixIcon: String? = nil
+    var suffixIcon: String? = nil
+    var onPrefixTap: (() -> Void)? = nil
+    var onSuffixTap: (() -> Void)? = nil
+
     @State private var text: String = ""
-    
+
     var body: some View {
-        TextField(hint, text: $text)
-            .padding()
-            .background(Color.white)
-            .cornerRadius(10)
-            .shadow(color: Color.black.opacity(0.1), radius: 10, x:0, y: 0)
-            .padding(.horizontal, horizontalPadding)
+        HStack {
+            // Prefix Icon (Left)
+            if let prefixIcon = prefixIcon {
+                Button(action: {
+                    onPrefixTap?()
+                }) {
+                    Image(systemName: prefixIcon)
+                        .foregroundColor(.gray)
+                        .padding(.leading, 10)
+                }
+            }
+
+            TextField(hint, text: $text)
+                .padding()
+                .frame(height: height)
+                .background(Color.white)
+
+            // Suffix Icon (Right)
+            if let suffixIcon = suffixIcon {
+                Button(action: {
+                    onSuffixTap?()
+                }) {
+                    Image(systemName: suffixIcon)
+                        .foregroundColor(.gray)
+                        .padding(.trailing, 10)
+                }
+            }
+        }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 4)
+        .padding(.horizontal, horizontalPadding)
     }
 }
 

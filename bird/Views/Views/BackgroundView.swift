@@ -18,7 +18,7 @@ struct BackgroundView<Content: View>: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: spacing) {
-            content
+            content.padding(.horizontal, 15)
         }
         .frame(maxWidth: .infinity,
                maxHeight: .infinity,
