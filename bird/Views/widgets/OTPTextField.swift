@@ -28,7 +28,7 @@ struct OTPTextField: View {
                     .multilineTextAlignment(.center)
                     .keyboardType(.numberPad)
                     .focused($focusedIndex, equals: index)
-                    .onChange(of: otpText[index]) { newValue in
+                    .onChange(of: otpText[index]) { oldValue, newValue in
                         handleInput(newValue, at: index)
                     }
             }
@@ -36,15 +36,12 @@ struct OTPTextField: View {
     }
     
     private func handleInput(_ newValue: String, at index: Int) {
-        // Ensure only one digit is stored
         otpText[index] = String(newValue.prefix(1))
         
-        // Move to next field if there's input
         if !newValue.isEmpty && index < digitCount - 1 {
             focusedIndex = index + 1
         }
         
-        // Move back if deleted
         if newValue.isEmpty && index > 0 {
             focusedIndex = index - 1
         }

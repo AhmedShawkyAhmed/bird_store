@@ -63,7 +63,7 @@ struct SplashScreen: View {
             }.offset(x: -200, y: 280)
             
             // Logo
-            Image("appLogo")
+            Image(Images.appLogo)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 300, height: 300)

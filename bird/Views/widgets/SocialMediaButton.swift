@@ -29,7 +29,7 @@ struct SocialMediaButton: View {
 }
 
 #Preview {
-    SocialMediaButton(image: "apple", action: {
+    SocialMediaButton(image: Images.apple, action: {
         print("Button Clicked")
     })
 }

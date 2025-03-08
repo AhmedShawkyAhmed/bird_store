@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
-            Image("background")
+            Image(Images.backgroundImage)
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: 350)
@@ -27,13 +27,13 @@ struct LoginScreen: View {
             ORWidget().offset(y: 530)
             
             HStack(spacing: 20) {
-                SocialMediaButton(image: "f", action: {
+                SocialMediaButton(image: Images.facebook, action: {
                     print("Facebook")
                 })
-                SocialMediaButton(image: "apple", action: {
+                SocialMediaButton(image: Images.apple, action: {
                     print("Apple")
                 })
-                SocialMediaButton(image: "google", action: {
+                SocialMediaButton(image: Images.google, action: {
                     print("Google")
                 })
             }.offset(y: 600)

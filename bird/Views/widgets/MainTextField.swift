@@ -20,7 +20,6 @@ struct MainTextField: View {
 
     var body: some View {
         HStack {
-            // Prefix Icon (Left)
             if let prefixIcon = prefixIcon {
                 Button(action: {
                     onPrefixTap?()
@@ -36,7 +35,6 @@ struct MainTextField: View {
                 .frame(height: height)
                 .background(Color.white)
 
-            // Suffix Icon (Right)
             if let suffixIcon = suffixIcon {
                 Button(action: {
                     onSuffixTap?()

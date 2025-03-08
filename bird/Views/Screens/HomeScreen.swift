@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @State private var selectedBrand: String = "All"
+    
     var body: some View {
         BackgroundView(
             spacing: 0,
@@ -31,10 +33,13 @@ struct HomeScreen: View {
                     )
                 }
                 AdsView(ads: adItems)
-                    .padding(.vertical, 15)
-                Spacer()
+                    .padding(.top, 15)
+                BrandFilterView(selectedBrand: $selectedBrand)
             }
         )
+        .onChange(of: selectedBrand) { oldBrand, newBrand in
+            print("Selected brand in HomeScreen: \(newBrand)")
+        }
     }
 }
 

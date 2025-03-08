@@ -15,10 +15,10 @@ struct AdModel: Identifiable {
 }
 
 let adItems: [AdModel] = [
-    AdModel(image: "ad", title: "New Release", description: "Acer Predator Helios 100"),
-    AdModel(image: "ad", title: "New Laptop", description: "MacBook Pro M4"),
-    AdModel(image: "ad", title: "New Phone", description: "Samsung Galaxy S24 Ultra"),
-    AdModel(image: "ad", title: "New Release", description: "Acer Predator Helios 100"),
-    AdModel(image: "ad", title: "New Laptop", description: "MacBook Pro M4"),
-    AdModel(image: "ad", title: "New Phone", description: "Samsung Galaxy S24 Ultra")
+    AdModel(image: Images.ad, title: "New Release", description: "Acer Predator Helios 100"),
+    AdModel(image: Images.ad, title: "New Laptop", description: "MacBook Pro M4"),
+    AdModel(image: Images.ad, title: "New Phone", description: "Samsung Galaxy S24 Ultra"),
+    AdModel(image: Images.ad, title: "New Release", description: "Acer Predator Helios 100"),
+    AdModel(image: Images.ad, title: "New Laptop", description: "MacBook Pro M4"),
+    AdModel(image: Images.ad, title: "New Phone", description: "Samsung Galaxy S24 Ultra")
 ]

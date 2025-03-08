@@ -21,8 +21,8 @@ struct LayoutScreen: View {
                 default: HomeScreen()
             }
                 Spacer()
-                BottomNavBar(selectedTab: $selectedTab) { newIndex in
-                    print("Selected Index: \(newIndex)")
+                BottomNavBar(selectedTab: $selectedTab) { newTab in
+                    print("Selected Tab: \(newTab)")
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
