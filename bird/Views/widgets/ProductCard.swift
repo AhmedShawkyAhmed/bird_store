@@ -16,7 +16,7 @@ struct ProductCard: View {
                 Image(product.image)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200, height: 200)
+                    .frame(width: 150, height: 150)
                     .padding(15)
                     .background(Color.white)
                     .cornerRadius(20)
@@ -36,17 +36,17 @@ struct ProductCard: View {
             ZStack(alignment: .bottomTrailing) {
                 VStack(alignment: .leading) {
                     Text(product.brand.text)
-                        .font(.system(size: 30))
+                        .font(.system(size: 20))
                         .foregroundColor(.Primary)
                     
                     Text(product.name)
-                        .frame(width: 215,alignment: .topLeading)
-                        .font(.system(size: 18))
+                        .frame(width: 165,alignment: .topLeading)
+                        .font(.system(size: 14))
                         .foregroundColor(.black.opacity(0.7))
                         .padding(.bottom, 20)
                     
                     Text(product.price)
-                        .font(.system(size: 15))
+                        .font(.system(size: 11))
                         .foregroundColor(.black.opacity(0.7))
                 }
                 .padding(.leading, 15)
@@ -55,8 +55,8 @@ struct ProductCard: View {
                 Image(systemName: "plus")
                     .resizable()
                     .scaledToFit()
-                    .padding(15)
-                    .frame(width: 50,height: 50, alignment: .center)
+                    .padding(10)
+                    .frame(width: 40,height: 40, alignment: .center)
                     .foregroundColor(Color.white)
                     .background(LinearGradient(
                         colors: [
@@ -68,7 +68,7 @@ struct ProductCard: View {
                         endPoint: .bottomTrailing))
                     .mask(
                         RoundedRectangle(cornerRadius: 20)
-                            .path(in: CGRect(x: 0, y: 0, width: 200, height: 100))
+                            .path(in: CGRect(x: 0, y: 0, width: 150, height: 100))
                     )
             }
         }

@@ -9,16 +9,18 @@ import SwiftUI
 
 struct BackgroundView<Content: View>: View {
     var spacing: Double = 60
+    var horizontalPadding: Double = 15
     let content: Content
 
-    init(spacing: Double = 60, @ViewBuilder content: () -> Content) {
+    init(spacing: Double = 60,horizontalPadding: Double = 15, @ViewBuilder content: () -> Content) {
         self.spacing = spacing
+        self.horizontalPadding = horizontalPadding
         self.content = content()
     }
     
     var body: some View {
         VStack(alignment: .center, spacing: spacing) {
-            content.padding(.horizontal, 15)
+            content.padding(.horizontal, horizontalPadding)
         }
         .frame(maxWidth: .infinity,
                maxHeight: .infinity,

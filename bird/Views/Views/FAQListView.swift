@@ -14,7 +14,9 @@ struct FAQListView: View {
                 ForEach(faqItems) {
                     faq in FAQWidget(faqItem: faq)
                 }
-            }.padding()
+            }
+            .padding()
+            .padding(.bottom, 60)
         }
     }
 }

@@ -13,6 +13,7 @@ struct HomeScreen: View {
     var body: some View {
         BackgroundView(
             spacing: 0,
+            horizontalPadding: 0,
             content: {
                 HStack {
                     MainTextField(
@@ -32,9 +33,12 @@ struct HomeScreen: View {
                         }
                     )
                 }
+                .padding(.horizontal, 15)
                 AdsView(ads: adItems)
                     .padding(.top, 15)
+                    .padding(.horizontal, 15)
                 BrandFilterView(selectedBrand: $selectedBrand)
+                ProductsListView()
             }
         )
         .onChange(of: selectedBrand) { oldBrand, newBrand in
