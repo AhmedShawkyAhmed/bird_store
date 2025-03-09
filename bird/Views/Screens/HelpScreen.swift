@@ -18,11 +18,6 @@ struct HelpScreen: View {
                     .foregroundColor(Color.white)
                 
                 FAQListView()
-//                    .padding(.bottom, 8)
-                                
-//                MainButton(text: "Continue", action: {
-//                    print("Continue")
-//                })
             }
         )
     }

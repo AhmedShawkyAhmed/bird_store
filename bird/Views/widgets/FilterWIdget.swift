@@ -24,12 +24,12 @@ struct FilterWIdget: View {
                 .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 4)
             
             Text(brandItem.text)
-                .font(.system(size: 20))
+                .font(.system(size: 15))
                 .foregroundColor(isSelected ? Color.white : Color.black)
-                .padding(.leading, 5)
+//                .padding(.leading, 5)
         }
-        .padding()
-        .frame(width: 140, height: 50, alignment: .leading)
+        .padding(.leading, 7)
+        .frame(width: 130, height: 50, alignment: .leading)
         .background(isSelected ? Color.Primary : Color.white)
         .cornerRadius(100)
         .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 4)

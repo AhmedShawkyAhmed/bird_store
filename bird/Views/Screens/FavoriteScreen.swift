@@ -11,9 +11,16 @@ struct FavoriteScreen: View {
     var body: some View {
         BackgroundView(
             spacing: 0,
+            horizontalPadding: 0,
             content: {
-            Text("Favorite Screen")
-        })
+                Text("Favorites")
+                    .font(.title)
+                    .padding(.vertical, 20)
+                    .foregroundColor(Color.white)
+                
+                ProductsListView(showFavoritesOnly: true)
+            }
+        )
     }
 }
 

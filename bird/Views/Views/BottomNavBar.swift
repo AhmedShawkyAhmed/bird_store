@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BottomNavBar: View {
     @Binding var selectedTab: Int
+    @State private var showAlert: Bool = false
+    @State private var navigateToLogin: Bool = false
     var onTabChange: ((Int) -> Void)?
     
     func updateTab(_ index: Int) {
@@ -25,8 +27,10 @@ struct BottomNavBar: View {
             
             HStack(alignment: .bottom) {
                 TabBarButton(icon: "rectangle.portrait.and.arrow.forward",
-                    isSelected: selectedTab == 0) {
-                    updateTab(0)
+                    isSelected: false) //selectedTab == 0)
+                {
+                    showAlert = true
+//                    updateTab(0)
                 }
                 
                 TabBarButton(icon: "heart.fill",
@@ -69,8 +73,21 @@ struct BottomNavBar: View {
             }
             .padding(.horizontal, 40)
             .padding(.bottom, 15)
+            .alert("Logout", isPresented: $showAlert) {
+                Button("Cancel", role: .cancel) {}
+                Button("Yes", role: .destructive) {
+                    print("Navigation to Login")
+                    navigateToLogin = true
+                    print(navigateToLogin)
+                }
+            } message: {
+                Text("Are you sure you want to logout?")
+            }
         }
         .frame(height: 0,alignment: .bottom)
+        .navigationDestination(isPresented: $navigateToLogin) {
+            LoginScreen()
+        }
     }
 }
 

@@ -12,8 +12,14 @@ struct NotificationScreen: View {
         BackgroundView(
             spacing: 0,
             content: {
-            Text("Notifications Screen")
-        })
+                Text("Notifications")
+                    .font(.title)
+                    .padding(.vertical, 20)
+                    .foregroundColor(Color.white)
+                
+                NotificationListView()
+            }
+        )
     }
 }
 

@@ -39,4 +39,4 @@ let faqItems: [FAQModel] = [
     FAQModel(title: "Fees", description: "There may be fees depending on your usage."),
     FAQModel(title: "Content", description: "Our platform provides diverse content."),
     FAQModel(title: "Service", description: "We offer various services to enhance your experience.")
-    ]
+]

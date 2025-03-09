@@ -40,6 +40,7 @@ struct LoginScreen: View {
                 
         }
         .ignoresSafeArea(.all, edges: .bottom)
+        .navigationTitle("Login")
     }
 }
 
