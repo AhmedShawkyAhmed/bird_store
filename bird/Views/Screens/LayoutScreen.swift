@@ -11,6 +11,7 @@ struct LayoutScreen: View {
     @State private var selectedTab = 2
     
     var body: some View {
+        NavigationStack {
             VStack {
                 switch selectedTab {
                 case 0: LoginScreen()
@@ -19,14 +20,15 @@ struct LayoutScreen: View {
                 case 3: NotificationScreen()
                 case 4: HelpScreen()
                 default: HomeScreen()
-            }
-                Spacer()
+                }
                 BottomNavBar(selectedTab: $selectedTab) { newTab in
                     print("Selected Tab: \(newTab)")
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all,edges: .bottom)
+            .navigationBarHidden(true)
+        }
     }
 }
 

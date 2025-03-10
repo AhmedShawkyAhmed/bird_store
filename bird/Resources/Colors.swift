@@ -35,4 +35,7 @@ extension Color {
     
     static let Primary = Color(light: "#0062BD", dark: "#0062BD")
     static let PrimaryDark = Color(light: "#0059AB", dark: "#0059AB")
+    static let white = Color(light: "#FFFFFF", dark: "#1F1F1F")
+    static let black = Color(light: "#1F1F1F", dark: "#FFFFFF")
+    static let shadowColor = Color(light: "#1F1F1F", dark: "#464646")
 }

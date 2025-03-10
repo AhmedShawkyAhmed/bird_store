@@ -21,7 +21,7 @@ struct IconButton: View {
                 .padding(14)
                 .background(Color.white)
                 .cornerRadius(12)
-                .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 4)
+                .shadow(color: Color.shadowColor.opacity(0.2), radius: 4, x: 0, y: 4)
         }
     }
 }

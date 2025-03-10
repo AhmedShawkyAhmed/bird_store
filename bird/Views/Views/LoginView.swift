@@ -10,13 +10,14 @@ import SwiftUI
 struct LoginView: View {
     @State private var fullName: String = ""
     @State private var phoneNumber: String = ""
+    var onTap: () -> Void
     
     var body: some View {
         ZStack(alignment: .center) {
             Color.white
                 .cornerRadius(40)
                 .shadow(
-                    color: Color.black.opacity(0.2),
+                    color: Color.shadowColor.opacity(0.2),
                     radius: 10, x: 0, y: 8)
             
             VStack(spacing: 15) {
@@ -33,6 +34,7 @@ struct LoginView: View {
                 
                 MainButton(text: "Login", action: {
                     print("Login Clecked")
+                    onTap()
                 })
             }
             .padding(.horizontal, 10)
@@ -44,5 +46,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(onTap: {})
 }

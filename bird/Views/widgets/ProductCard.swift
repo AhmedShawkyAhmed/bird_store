@@ -20,7 +20,7 @@ struct ProductCard: View {
                     .padding(15)
                     .background(Color.white)
                     .cornerRadius(20)
-                    .shadow(color: Color.black.opacity(0.2), radius: 4)
+                    .shadow(color: Color.shadowColor.opacity(0.2), radius: 4)
                 
                 Image(systemName: product.isFavorite ? "heart.fill" : "heart")
                     .resizable()
@@ -74,7 +74,7 @@ struct ProductCard: View {
         }
         .background(Color.white)
         .cornerRadius(20)
-        .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: 5)
+        .shadow(color: Color.shadowColor.opacity(0.3), radius: 6, x: 0, y: 5)
     }
 }
 

@@ -8,39 +8,50 @@
 import SwiftUI
 
 struct LoginScreen: View {
+    @State private var navigateToOTP = false
+
     var body: some View {
-        ZStack(alignment: .top) {
-            Image(Images.backgroundImage)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity, maxHeight: 350)
-                .ignoresSafeArea(.all, edges: .top)
-                .offset(y: -100)
-            
-            Color.white
-                .frame(maxWidth: .infinity, maxHeight: 800)
-                .cornerRadius(60)
-                .offset(y: 180)
-            
-            LoginView()
-            
-            ORWidget().offset(y: 530)
-            
-            HStack(spacing: 20) {
-                SocialMediaButton(image: Images.facebook, action: {
-                    print("Facebook")
-                })
-                SocialMediaButton(image: Images.apple, action: {
-                    print("Apple")
-                })
-                SocialMediaButton(image: Images.google, action: {
-                    print("Google")
-                })
-            }.offset(y: 600)
+        NavigationStack {
+            ZStack(alignment: .top) {
+                Image(Images.backgroundImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: 350)
+                    .ignoresSafeArea(.all, edges: .top)
+                    .offset(y: -100)
                 
+                Color.white
+                    .frame(maxWidth: .infinity, maxHeight: 800)
+                    .cornerRadius(60)
+                    .offset(y: 180)
+                
+                LoginView(
+                    onTap: {
+                        navigateToOTP = true
+                    }
+                )
+                .navigationDestination(isPresented: $navigateToOTP) {
+                    VerifyScreen()
+                }
+                
+                ORWidget().offset(y: 530)
+                
+                HStack(spacing: 20) {
+                    SocialMediaButton(image: Images.facebook, action: {
+                        print("Facebook")
+                    })
+                    SocialMediaButton(image: Images.apple, action: {
+                        print("Apple")
+                    })
+                    SocialMediaButton(image: Images.google, action: {
+                        print("Google")
+                    })
+                }.offset(y: 600)
+                
+            }
+            .ignoresSafeArea(.all, edges: .bottom)
         }
-        .ignoresSafeArea(.all, edges: .bottom)
-        .navigationTitle("Login")
+        .navigationBarHidden(true)
     }
 }
 

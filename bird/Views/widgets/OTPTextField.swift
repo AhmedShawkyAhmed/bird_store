@@ -24,7 +24,7 @@ struct OTPTextField: View {
                     .frame(width: 60, height: 60)
                     .background(Color.white)
                     .cornerRadius(10)
-                    .shadow(color: Color.black.opacity(0.1), radius: 10)
+                    .shadow(color: Color.shadowColor.opacity(0.1), radius: 10)
                     .multilineTextAlignment(.center)
                     .keyboardType(.numberPad)
                     .focused($focusedIndex, equals: index)
