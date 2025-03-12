@@ -21,6 +21,15 @@ struct ProductModel: Identifiable {
     var isFavorite: Bool
 }
 
+let galleryImages: [String] = [
+    Images.acerLaptop,
+    Images.appleLaptop,
+    Images.acerLaptop,
+    Images.appleLaptop,
+    Images.acerLaptop,
+    Images.appleLaptop,
+]
+
 let productList: [ProductModel] = [
     ProductModel(
         brand: brandList[1],

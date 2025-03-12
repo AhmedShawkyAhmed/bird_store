@@ -13,14 +13,11 @@ struct ProductCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                Image(product.image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
-                    .padding(15)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .shadow(color: Color.shadowColor.opacity(0.2), radius: 4)
+                ImageCard(
+                    imageName: product.image,
+                    width: 150,
+                    height: 150
+                )
                 
                 Image(systemName: product.isFavorite ? "heart.fill" : "heart")
                     .resizable()

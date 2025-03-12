@@ -16,7 +16,7 @@ struct ProductsListView: View {
         GridItem(.flexible(), spacing: 10)
     ]
     var body: some View {
-//        ScrollView {
+        ScrollView {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach($products.filter {
                     showFavoritesOnly ? $0.isFavorite.wrappedValue : true
@@ -25,7 +25,7 @@ struct ProductsListView: View {
             }
             .padding(.horizontal, 5)
             .padding(.bottom, 60)
-//        }
+        }
     }
 }
 
