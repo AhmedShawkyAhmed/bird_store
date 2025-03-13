@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainButton: View {
     var text: String
+    var horizontalPadding: Double = 30
+    var cornerRadius: Double = 100
     var action: () -> Void
     
     var body: some View {
@@ -28,10 +30,10 @@ struct MainButton: View {
                     startPoint: .leading,
                     endPoint: .trailing
                 ))
-                .cornerRadius(100)
+                .cornerRadius(cornerRadius)
                 .shadow(color: Color.shadowColor.opacity(0.2), radius: 4, x: 0, y: 4)
         }
-        .padding(.horizontal, 30)
+        .padding(.horizontal, horizontalPadding)
     }
 }
 
