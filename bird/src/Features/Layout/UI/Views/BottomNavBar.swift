@@ -27,15 +27,15 @@ struct BottomNavBar: View {
                     .shadow(radius: 5)
                 
                 HStack(alignment: .bottom) {
-                    TabBarButton(icon: "rectangle.portrait.and.arrow.forward",
-                                 isSelected: false) //selectedTab == 0)
-                    {
+                    TabBarButton(
+                        icon: "rectangle.portrait.and.arrow.forward",
+                        isSelected: false) {
                         showAlert = true
-                        //                    updateTab(0)
                     }
                     
-                    TabBarButton(icon: "heart.fill",
-                                 isSelected: selectedTab == 1) {
+                    TabBarButton(
+                        icon: "heart.fill",
+                        isSelected: selectedTab == 1) {
                         updateTab(1)
                     }
                     
@@ -62,13 +62,15 @@ struct BottomNavBar: View {
                         updateTab(2)
                     }
                     
-                    TabBarButton(icon: "bell.badge.fill",
-                                 isSelected: selectedTab == 3) {
+                    TabBarButton(
+                        icon: "bell.badge.fill",
+                        isSelected: selectedTab == 3) {
                         updateTab(3)
                     }
                     
-                    TabBarButton(icon: "gearshape.fill",
-                                 isSelected: selectedTab == 4) {
+                    TabBarButton(
+                        icon: "gearshape.fill",
+                        isSelected: selectedTab == 4) {
                         updateTab(4)
                     }
                 }

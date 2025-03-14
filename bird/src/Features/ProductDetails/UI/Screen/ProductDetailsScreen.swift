@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ProductDetailsScreen: View {
+    @State private var selectedTab = 1
     let product: ProductModel
     
     var body: some View {
         BackgroundView(
             spacing: 0,
             content: {
-//                HStack {
-//                    IconButton(icon: "arrow.left", action: {})
-//                    Spacer()
-//                }
-//                .padding(.bottom, 15)
+                HStack {
+                    IconButton(icon: "chevron.backward", action: {})
+                    Spacer()
+                }
+                .padding(.bottom, 15)
                 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     HStack {
                         Text(product.name)
                             .font(.system(size: 18, weight: .bold))
@@ -70,7 +71,28 @@ struct ProductDetailsScreen: View {
                     .padding(.horizontal)
                     
                     Divider()
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 40)
+                        .padding(.bottom, 15)
+                    
+                    HStack(spacing: 60) {
+                        SectionWidget(title: "Overview", isSelected: selectedTab == 1, action: {
+                            selectedTab = 1
+                        })
+                        SectionWidget(title: "Specification", isSelected: selectedTab == 2, action: {
+                            selectedTab = 2
+                        })
+                        SectionWidget(title: "Review", isSelected: selectedTab == 3, action: {
+                            selectedTab = 3
+                        })
+                    }
+                    .padding(.bottom, 20)
+                    
+                    switch selectedTab {
+                    case 1: OvervireView(overviewText: product.overview)
+                    case 2: SpecificationView()
+                    case 3: ReviewsView(reviews: product.reviews)
+                    default: OvervireView(overviewText: product.overview)
+                    }
                 }
                 
             }

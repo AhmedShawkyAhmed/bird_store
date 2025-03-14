@@ -32,7 +32,7 @@ struct WebsiteWidget: View {
             Spacer()
             
             IconButton(
-                icon: "arrow.forward",
+                icon: "chevron.forward",
                 width: 15,
                 height: 15,
                 padding: 8,
