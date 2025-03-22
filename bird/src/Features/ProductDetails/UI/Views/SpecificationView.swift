@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct SpecificationView: View {
+    var spesification: SpesificationModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 8) {
+            ForEach(spesification.items, id: \.title)
+            { title, content in
+                SpecificationWidget(title: title, content: content)
+            }
+        }
     }
 }
 
 #Preview {
-    SpecificationView()
+    SpecificationView(spesification: productList[0].spesification)
 }

@@ -19,6 +19,21 @@ struct SpesificationModel: Identifiable {
     let camera: String
     let audio: String
     let battery: String
+    
+    var items: [(title: String, content: String)] {
+            [
+                ("Processor", processor),
+                ("Graphics", graphics),
+                ("Display", display),
+                ("Memory", memory),
+                ("Storage", storage),
+                ("Operating System", operatingSystem),
+                ("Ports", ports),
+                ("Camera", camera),
+                ("Audio", audio),
+                ("Battery", battery)
+            ]
+        }
 }
 
 let specificationsList: [SpesificationModel] = [
