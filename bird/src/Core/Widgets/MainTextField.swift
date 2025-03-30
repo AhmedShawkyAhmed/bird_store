@@ -9,14 +9,13 @@ import SwiftUI
 
 struct MainTextField: View {
     var hint: String
+    @Binding var text: String
     var horizontalPadding: CGFloat = 30.0
     var height: CGFloat = 50
     var prefixIcon: String? = nil
     var suffixIcon: String? = nil
     var onPrefixTap: (() -> Void)? = nil
     var onSuffixTap: (() -> Void)? = nil
-
-    @State private var text: String = ""
 
     var body: some View {
         HStack {
@@ -53,5 +52,6 @@ struct MainTextField: View {
 }
 
 #Preview {
-    MainTextField(hint: "Enter Text")
+    @Previewable @State var text = "Sample Text"
+    return MainTextField(hint: "Enter Text", text: $text)
 }

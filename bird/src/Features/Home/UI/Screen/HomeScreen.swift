@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @State private var selectedBrand: String = "All"
+    @State private var selectedBrand: String = ""
     
     var body: some View {
         BackgroundView(
@@ -19,6 +19,7 @@ struct HomeScreen: View {
                     HStack {
                         MainTextField(
                             hint: "Search",
+                            text: $selectedBrand,
                             horizontalPadding: 0,
                             height: 50,
                             suffixIcon: "magnifyingglass",

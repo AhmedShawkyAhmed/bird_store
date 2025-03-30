@@ -6,9 +6,18 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct VerifyScreen: View {
     @State private var navigateToLayout = false
+    @State private var showToast = false
+    
+    @State private var pinOne = ""
+    @State private var pinTwo = ""
+    @State private var pinThree = ""
+    @State private var pinFour = ""
+    @State private var pinFive = ""
+    @State private var pinSix = ""
     
     var body: some View {
         NavigationStack {
@@ -20,7 +29,14 @@ struct VerifyScreen: View {
                         .padding(.bottom, 60)
                         .foregroundColor(Color.white)
                     
-                    OTPTextField(digitCount: 4)
+                    OTPTextField(
+                        pinOne: $pinOne,
+                        pinTwo: $pinTwo,
+                        pinThree: $pinThree,
+                        pinFour: $pinFour,
+                        pinFive: $pinFive,
+                        pinSix: $pinSix
+                    )
                     
                     Button(action: {
                         print("Resend OTP")
@@ -33,8 +49,14 @@ struct VerifyScreen: View {
                     MainButton(
                         text: "Verify",
                         action: {
-                        print("Verify")
-                        navigateToLayout = true
+                            let otpCode = pinOne + pinTwo + pinThree + pinFour + pinFive + pinSix
+                            if(otpCode == "123456") {
+                                print("Entered OTP: \(otpCode)")
+                                showToast = false
+                                navigateToLayout = true
+                            }else {
+                                showToast = true
+                            }
                         }
                     )
                     .navigationDestination(isPresented: $navigateToLayout) {
@@ -42,6 +64,9 @@ struct VerifyScreen: View {
                     }
                 }
             )
+        }
+        .toast(isPresenting: $showToast) {
+            AlertToast(displayMode: .alert, type: .error(.red), title: "Wrong OTP")
         }
         .navigationBarHidden(true)
     }

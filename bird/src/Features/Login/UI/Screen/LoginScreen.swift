@@ -16,7 +16,7 @@ struct LoginScreen: View {
                 Image(Images.backgroundImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(maxWidth: .infinity, maxHeight: 350)
+                    .frame(maxWidth: .infinity)
                     .ignoresSafeArea(.all, edges: .top)
                     .offset(y: -100)
                 

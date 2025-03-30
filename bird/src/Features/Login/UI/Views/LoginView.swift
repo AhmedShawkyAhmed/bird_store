@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var fullName: String = ""
     @State private var phoneNumber: String = ""
+    @State private var isLogin = false
     var onTap: () -> Void
     
     var body: some View {
@@ -21,25 +22,50 @@ struct LoginView: View {
                     radius: 10, x: 0, y: 8)
             
             VStack(spacing: 15) {
-                Text("Welcome")
-                    .font(.title)
+                HStack(spacing: 40) {
+                    VStack(spacing: 5){
+                        Text("Login")
+                            .font(.title3)
+                        
+                        Color(isLogin ? Color.Primary : Color.white)
+                            .opacity(0.75)
+                            .cornerRadius(100)
+                            .frame(width:100, height: 3)
+                    }
+                    .onTapGesture {
+                        isLogin = true
+                    }
+                    
+                    VStack(spacing: 5){
+                        Text("Register")
+                            .font(.title3)
+                        
+                        Color(!isLogin ? Color.Primary : Color.white)
+                            .opacity(0.75)
+                            .cornerRadius(100)
+                            .frame(width:100, height: 3)
+                    }
+                    .onTapGesture {
+                        isLogin = false
+                    }
+                }
                 
-                Color.Primary
-                    .opacity(0.75)
-                    .cornerRadius(100)
-                    .frame(width:150, height: 3)
+                if !isLogin {
+                    MainTextField(hint: "Enter Your Full Name", text: $fullName)
+                }
+                MainTextField(hint: "Enter Your Phone Number", text: $phoneNumber)
                 
-                MainTextField(hint: "Enter Your Full Name")
-                MainTextField(hint: "Enter Your Phone Number")
-                
-                MainButton(text: "Login", action: {
-                    print("Login Clecked")
-                    onTap()
-                })
+                MainButton(
+                    text: "Continue",
+                    action: {
+                        print("Login Clecked")
+                        onTap()
+                    }
+                )
             }
             .padding(.horizontal, 10)
         }
-        .frame(maxWidth: .infinity, maxHeight: 300)
+        .frame(maxWidth: .infinity, maxHeight: isLogin ? 235 : 300)
         .padding(.horizontal, 25)
         .padding(.top, 80)
     }
