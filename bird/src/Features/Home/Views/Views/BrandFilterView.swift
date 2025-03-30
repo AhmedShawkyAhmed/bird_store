@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct BrandFilterView: View {
+    @StateObject private var viewModel = HomeViewModel()
     @Binding var selectedBrand: String
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(brandList) {
-                    brand in FilterWIdget(
-                        brandItem: brand,
-                        isSelected: brand.text == selectedBrand,
+                ForEach(viewModel.brands.indices, id: \.self) {
+                    index in FilterWIdget(
+                        brandItem: viewModel.brands[index],
+                        isSelected: viewModel.brands[index].name == selectedBrand,
                         onTap: {
-                            selectedBrand = brand.text
+                            selectedBrand = viewModel.brands[index].name
                         }
                     )
                 }

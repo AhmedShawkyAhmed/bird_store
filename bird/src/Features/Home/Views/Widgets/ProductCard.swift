@@ -36,7 +36,7 @@ struct ProductCard: View {
                 
                 ZStack(alignment: .bottomTrailing) {
                     VStack(alignment: .leading) {
-                        Text(product.brand.text)
+                        Text(product.brand.name)
                             .font(.system(size: 20))
                             .foregroundColor(.Primary)
                         

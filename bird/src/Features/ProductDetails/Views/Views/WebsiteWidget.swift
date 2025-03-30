@@ -21,7 +21,7 @@ struct WebsiteWidget: View {
             )
             
             VStack(alignment: .leading) {
-                Text("\(product.brand.text) Official Store")
+                Text("\(product.brand.name) Official Store")
                     .font(.system(size: 16))
                 Spacer()
                 Text("View Store")

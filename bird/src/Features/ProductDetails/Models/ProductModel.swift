@@ -30,9 +30,11 @@ let galleryImages: [String] = [
     Images.appleLaptop,
 ]
 
+var brand: BrandModel = BrandModel(id: 1, image: "ff", name: "ddd")
+
 let productList: [ProductModel] = [
     ProductModel(
-        brand: brandList[1],
+        brand: brand,
         name: "Acer Predator Helios 300",
         price: "45,000 EGP",
         image: Images.acerLaptop,
@@ -55,7 +57,7 @@ let productList: [ProductModel] = [
         isFavorite: true
     ),
     ProductModel(
-        brand: brandList[2],
+        brand: brand,
         name: "Razer Blade 16",
         price: "75,000 EGP",
         image: Images.razerLaptop,
@@ -78,7 +80,7 @@ let productList: [ProductModel] = [
         isFavorite: false
     ),
     ProductModel(
-        brand: brandList[3],
+        brand: brand,
         name: "MacBook Pro M3 Max",
         price: "170,000 EGP",
         image: Images.appleLaptop,
@@ -101,7 +103,7 @@ let productList: [ProductModel] = [
         isFavorite: true
     ),
     ProductModel(
-        brand: brandList[1],
+        brand:brand,
         name: "Acer Swift X",
         price: "35,000 EGP",
         image: Images.acerLaptop,
@@ -124,7 +126,7 @@ let productList: [ProductModel] = [
         isFavorite: false
     ),
     ProductModel(
-        brand: brandList[2],
+        brand: brand,
         name: "Razer Blade Stealth 13",
         price: "42,000 EGP",
         image: Images.razerLaptop,
@@ -147,7 +149,7 @@ let productList: [ProductModel] = [
         isFavorite: true
     ),
     ProductModel(
-        brand: brandList[3],
+        brand: brand,
         name: "MacBook Air M2",
         price: "50,000 EGP",
         image: Images.appleLaptop,
@@ -170,7 +172,7 @@ let productList: [ProductModel] = [
         isFavorite: false
     ),
     ProductModel(
-       brand: brandList[1],
+       brand: brand,
        name: "Acer Nitro 5",
        price: "38,000 EGP",
        image: Images.acerLaptop,
@@ -193,7 +195,7 @@ let productList: [ProductModel] = [
        isFavorite: false
    ),
    ProductModel(
-       brand: brandList[2],
+       brand: brand,
        name: "Razer Blade 14",
        price: "65,000 EGP",
        image: Images.razerLaptop,
@@ -216,7 +218,7 @@ let productList: [ProductModel] = [
        isFavorite: true
    ),
    ProductModel(
-       brand: brandList[3],
+       brand: brand,
        name: "MacBook Pro 14 M3",
        price: "130,000 EGP",
        image: Images.appleLaptop,
@@ -239,7 +241,7 @@ let productList: [ProductModel] = [
        isFavorite: true
    ),
    ProductModel(
-       brand: brandList[1],
+       brand: brand,
        name: "Acer Aspire 7",
        price: "28,500 EGP",
        image: Images.acerLaptop,
@@ -262,7 +264,7 @@ let productList: [ProductModel] = [
        isFavorite: false
    ),
    ProductModel(
-       brand: brandList[2],
+       brand: brand,
        name: "Razer Book 13",
        price: "40,000 EGP",
        image: Images.razerLaptop,

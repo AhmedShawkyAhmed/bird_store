@@ -7,18 +7,17 @@
 
 import Foundation
 
-struct AdModel: Identifiable {
-    let id = UUID()
+struct AdModel: Codable {
+    let id: Int
     let image: String
     let title: String
     let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case image
+        case title
+        case description
+    }
 }
 
-let adItems: [AdModel] = [
-    AdModel(image: Images.ad, title: "New Release", description: "Acer Predator Helios 100"),
-    AdModel(image: Images.ad, title: "New Laptop", description: "MacBook Pro M4"),
-    AdModel(image: Images.ad, title: "New Phone", description: "Samsung Galaxy S24 Ultra"),
-    AdModel(image: Images.ad, title: "New Release", description: "Acer Predator Helios 100"),
-    AdModel(image: Images.ad, title: "New Laptop", description: "MacBook Pro M4"),
-    AdModel(image: Images.ad, title: "New Phone", description: "Samsung Galaxy S24 Ultra")
-]

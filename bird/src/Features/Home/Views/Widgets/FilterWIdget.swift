@@ -14,16 +14,27 @@ struct FilterWIdget: View {
     
     var body: some View {
         HStack() {
-            Image(brandItem.image)
-                .resizable()
-                .scaledToFit()
-                .padding(5)
-                .frame(width: 40, height: 40, alignment: .center)
-                .background(Color.white)
-                .cornerRadius(100)
-                .shadow(color: Color.shadowColor.opacity(0.3), radius: 5, x: 0, y: 4)
+            AsyncImage(url: URL(string: brandItem.image)) { image in
+                
+                image.resizable()
+                    .scaledToFit()
+                    .padding(5)
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .background(Color.white)
+                    .cornerRadius(100)
+                    .shadow(color: Color.shadowColor.opacity(0.3), radius: 5, x: 0, y: 4)
+            } placeholder: {
+                Image(brandItem.image)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(5)
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .background(Color.white)
+                    .cornerRadius(100)
+                    .shadow(color: Color.shadowColor.opacity(0.3), radius: 5, x: 0, y: 4)
+            }
             
-            Text(brandItem.text)
+            Text(brandItem.name)
                 .font(.system(size: 15))
                 .foregroundColor(isSelected ? Color.white : Color.black)
 //                .padding(.leading, 5)
@@ -41,7 +52,7 @@ struct FilterWIdget: View {
 
 #Preview {
     FilterWIdget(
-        brandItem: brandList[0],
+        brandItem: BrandModel(id: 1, image: "", name: ""),
         isSelected: true,
         onTap: {}
     )

@@ -7,15 +7,14 @@
 
 import Foundation
 
-struct BrandModel: Identifiable {
-    let id = UUID()
+struct BrandModel: Codable {
+    let id: Int
     let image: String
-    let text: String
+    let name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case image
+        case name
+    }
 }
-
-let brandList: [BrandModel] = [
-    BrandModel(image: Images.allBrands, text: "All"),
-    BrandModel(image: Images.acer, text: "Acer"),
-    BrandModel(image: Images.razer, text: "Razer"),
-    BrandModel(image: Images.apple, text: "Apple")
-]

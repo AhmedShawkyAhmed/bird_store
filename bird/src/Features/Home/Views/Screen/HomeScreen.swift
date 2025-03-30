@@ -36,7 +36,7 @@ struct HomeScreen: View {
                         )
                     }
                     .padding(.horizontal, 15)
-                    AdsView(ads: adItems)
+                    AdsView()
                         .padding(.top, 15)
                         .padding(.horizontal, 15)
                     BrandFilterView(selectedBrand: $selectedBrand)
