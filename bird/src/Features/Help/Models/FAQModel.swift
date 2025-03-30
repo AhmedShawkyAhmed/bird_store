@@ -7,36 +7,14 @@
 
 import Foundation
 
-struct FAQModel: Identifiable {
-    let id = UUID()
+struct FAQModel: Codable {
+    let id: Int
     let title: String
     let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title = "question"
+        case description = "answer"
+    }
 }
-
-let faqItems: [FAQModel] = [
-    FAQModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    FAQModel(title: "Data", description: "We collect data to improve your experience."),
-    FAQModel(title: "Fees", description: "There may be fees depending on your usage."),
-    FAQModel(title: "Content", description: "Our platform provides diverse content."),
-    FAQModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    FAQModel(title: "Data", description: "We collect data to improve your experience."),
-    FAQModel(title: "Fees", description: "There may be fees depending on your usage."),
-    FAQModel(title: "Content", description: "Our platform provides diverse content."),
-    FAQModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    FAQModel(title: "Data", description: "We collect data to improve your experience."),
-    FAQModel(title: "Fees", description: "There may be fees depending on your usage."),
-    FAQModel(title: "Content", description: "Our platform provides diverse content."),
-    FAQModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    FAQModel(title: "Data", description: "We collect data to improve your experience."),
-    FAQModel(title: "Fees", description: "There may be fees depending on your usage."),
-    FAQModel(title: "Content", description: "Our platform provides diverse content."),
-    FAQModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    FAQModel(title: "Data", description: "We collect data to improve your experience."),
-    FAQModel(title: "Fees", description: "There may be fees depending on your usage."),
-    FAQModel(title: "Content", description: "Our platform provides diverse content."),
-    FAQModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    FAQModel(title: "Data", description: "We collect data to improve your experience."),
-    FAQModel(title: "Fees", description: "There may be fees depending on your usage."),
-    FAQModel(title: "Content", description: "Our platform provides diverse content."),
-    FAQModel(title: "Service", description: "We offer various services to enhance your experience.")
-]

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NotificationWidget: View {
     var notificationItme: NotificationModel
-    @State private var expandedIndex: UUID? = nil
+    @State private var expandedIndex: Int? = nil
     
     var body: some View {
         DisclosureGroup(
@@ -45,5 +45,5 @@ struct NotificationWidget: View {
 }
 
 #Preview {
-    NotificationWidget(notificationItme: notificationsList[0])
+    NotificationWidget(notificationItme: NotificationModel(id: 1, title: "sf", description: "fs"))
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FAQWidget: View {
     var faqItem: FAQModel
-    @State private var expandedIndex: UUID? = nil
+    @State private var expandedIndex: Int? = nil
     
     var body: some View {
         DisclosureGroup(
@@ -28,6 +28,7 @@ struct FAQWidget: View {
                 Text(faqItem.title)
                     .font(.system(size: 18))
                     .foregroundColor(.Primary)
+                    .multilineTextAlignment(.leading)
             }
             .padding(10)
             .background(Color.white)
@@ -37,5 +38,5 @@ struct FAQWidget: View {
     }
 
 #Preview {
-    FAQWidget(faqItem: FAQModel(title: "Title", description: "Description"))
+    FAQWidget(faqItem: FAQModel(id:1, title: "Do you offer discounts for students or businesses?", description: "Yes, we partner with financing companies to offer installment plans."))
 }

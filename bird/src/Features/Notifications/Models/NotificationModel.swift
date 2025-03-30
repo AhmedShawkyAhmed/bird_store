@@ -7,31 +7,14 @@
 
 import Foundation
 
-struct NotificationModel: Identifiable {
-    let id = UUID()
+struct NotificationModel: Codable {
+    let id: Int
     let title: String
     let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case description
+    }
 }
-
-let notificationsList: [NotificationModel] = [
-    NotificationModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Data", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Favorite", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Favorite", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Help", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Favorite", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Login", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Register", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Data", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Favorite", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Favorite", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Help", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Favorite", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Account", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Login", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    NotificationModel(title: "Register", description: "You need to create an account to use the application but you can delete your account any time you want."),
-    ]
