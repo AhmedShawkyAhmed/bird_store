@@ -12,13 +12,13 @@ struct ReviewsView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(reviews) {
-                review in ReviewWidget(review: review)
+            ForEach(reviews.indices, id: \.self) {
+                index in ReviewWidget(review: reviews[index])
             }
         }
     }
 }
 
 #Preview {
-    ReviewsView(reviews: reviewList)
+    ReviewsView(reviews: [])
 }

@@ -107,5 +107,33 @@ struct ProductDetailsScreen: View {
 }
 
 #Preview {
-    ProductDetailsScreen(product: productList[0])
+    ProductDetailsScreen(product: ProductModel(
+        id: 1,
+        brand: BrandModel(
+            id: 1,
+            image: "",
+            name: ""
+        ),
+        name: "",
+        price: "",
+        image: "",
+        type: "",
+        storeURL: "",
+        overview: "",
+        spesification: SpesificationModel(
+            id: 1,
+            processor: "",
+            graphics: "",
+            display: "",
+            memory: "",
+            storage: "",
+            operatingSystem: "",
+            ports: "",
+            camera: "",
+            audio: "",
+            battery: ""
+        ),
+        reviews: [],
+        isFavorite: false
+    ))
 }

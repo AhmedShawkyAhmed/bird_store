@@ -20,5 +20,20 @@ struct SpecificationView: View {
 }
 
 #Preview {
-    SpecificationView(spesification: productList[0].spesification)
+    SpecificationView(
+        spesification:
+            SpesificationModel(
+                id: 1,
+                processor: "",
+                graphics: "",
+                display: "",
+                memory: "",
+                storage: "",
+                operatingSystem: "",
+                ports: "",
+                camera: "",
+                audio: "",
+                battery: ""
+            )
+    )
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductsListView: View {
-    @State private var products = productList
+    @StateObject private var viewModel = HomeViewModel()
     let showFavoritesOnly: Bool
     
     let columns = [
@@ -17,14 +17,26 @@ struct ProductsListView: View {
     ]
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach($products.filter {
-                    showFavoritesOnly ? $0.isFavorite.wrappedValue : true
-                })
-                { $product in ProductCard(product: $product)}
+            if viewModel.isProductLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .padding()
+            } else {
+                if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                }
+                
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach($viewModel.products.indices.filter { index in
+                        showFavoritesOnly ? viewModel.products[index].isFavorite : true
+                    }, id: \.self) { index in
+                        ProductCard(product: $viewModel.products[index])
+                    }
+                }
+                .padding(.horizontal, 5)
+                .padding(.bottom, 60)
             }
-            .padding(.horizontal, 5)
-            .padding(.bottom, 60)
         }
     }
 }

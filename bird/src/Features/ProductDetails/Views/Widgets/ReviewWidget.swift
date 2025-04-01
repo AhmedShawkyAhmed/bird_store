@@ -18,7 +18,7 @@ struct ReviewWidget: View {
                 
                 Spacer()
                 
-                Text("( \(String(format: "%.1f",review.rate)) )")
+                Text("( \(review.rating) )")
                     .font(.system(size: 10))
                 
                 Image(systemName: "star.fill")
@@ -45,9 +45,10 @@ struct ReviewWidget: View {
 #Preview {
     ReviewWidget(
         review: ReviewModel(
+            id: 1,
             reviewer: "Michael Smith",
             comment: "Decent laptop but gets a bit hot under heavy load. Good for casual users.",
-            rate: 3.5
+            rating:3
         )
     )
 }

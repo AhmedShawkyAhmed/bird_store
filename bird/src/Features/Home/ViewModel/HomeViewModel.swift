@@ -11,14 +11,17 @@ import Foundation
 class HomeViewModel: ObservableObject {
     @Published var ads: [AdModel] = []
     @Published var brands: [BrandModel] = []
+    @Published var products: [ProductModel] = []
     @Published var errorMessage: String?
     @Published var isAdsLoading: Bool = false
     @Published var isBrandLoading: Bool = false
+    @Published var isProductLoading: Bool = false
     
     init() {
         Task {
             await getAds()
             await getBrands()
+            await getProducts()
         }
     }
     
@@ -51,6 +54,22 @@ class HomeViewModel: ObservableObject {
         } catch {
             print(error)
             errorMessage = "Error fetching Brands: \(error.localizedDescription)"
+        }
+    }
+    
+    func getProducts() async {
+        isProductLoading = true
+        defer { isProductLoading = false }
+        
+        do {
+            let response: APIResponse<[ProductModel]> = try await APIClient.shared.request(
+                endpoint: EndPoints.product,
+                method: .GET
+            )
+            products = response.data
+        } catch {
+            print(error)
+            errorMessage = "Error fetching Products: \(error.localizedDescription)"
         }
     }
 }
