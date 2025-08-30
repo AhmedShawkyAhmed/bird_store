@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		697EAB3E2E632440005EBC3D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 697EAB3D2E632440005EBC3D /* Alamofire */; };
 		69D310EE2D99773D00DC4FDA /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 69D310ED2D99773D00DC4FDA /* AlertToast */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,19 @@
 			remoteInfo = bird;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		697EAB422E632446005EBC3D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		691B9D282D73A5C3001A93AB /* bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bird.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D310EE2D99773D00DC4FDA /* AlertToast in Frameworks */,
+				697EAB3E2E632440005EBC3D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,7 @@
 				691B9D2A2D73A5C3001A93AB /* bird */,
 				691B9D3B2D73A5C3001A93AB /* birdTests */,
 				691B9D452D73A5C3001A93AB /* birdUITests */,
+				697EAB3C2E632440005EBC3D /* Frameworks */,
 				691B9D292D73A5C3001A93AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +113,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		697EAB3C2E632440005EBC3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,6 +130,7 @@
 				691B9D242D73A5C2001A93AB /* Sources */,
 				691B9D252D73A5C2001A93AB /* Frameworks */,
 				691B9D262D73A5C2001A93AB /* Resources */,
+				697EAB422E632446005EBC3D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -118,6 +142,7 @@
 			name = bird;
 			packageProductDependencies = (
 				69D310ED2D99773D00DC4FDA /* AlertToast */,
+				697EAB3D2E632440005EBC3D /* Alamofire */,
 			);
 			productName = bird;
 			productReference = 691B9D282D73A5C3001A93AB /* bird.app */;
@@ -177,7 +202,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					691B9D272D73A5C2001A93AB = {
 						CreatedOnToolsVersion = 16.2;
@@ -203,6 +228,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				69D310EC2D99773D00DC4FDA /* XCRemoteSwiftPackageReference "AlertToast" */,
+				697EAB3B2E632422005EBC3D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 691B9D292D73A5C3001A93AB /* Products */;
@@ -313,6 +339,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -376,6 +403,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -405,7 +433,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bird/Preview Content\"";
-				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -434,7 +461,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bird/Preview Content\"";
-				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -461,7 +487,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -480,7 +505,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -498,7 +522,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawky.birdUITests;
@@ -515,7 +538,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J8NJM5R3N7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawky.birdUITests;
@@ -569,6 +591,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		697EAB3B2E632422005EBC3D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
 		69D310EC2D99773D00DC4FDA /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast";
@@ -580,6 +610,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		697EAB3D2E632440005EBC3D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 697EAB3B2E632422005EBC3D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		69D310ED2D99773D00DC4FDA /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 69D310EC2D99773D00DC4FDA /* XCRemoteSwiftPackageReference "AlertToast" */;

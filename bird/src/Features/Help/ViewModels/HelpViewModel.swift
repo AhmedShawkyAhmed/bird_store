@@ -10,7 +10,7 @@ class HelpViewModel: ObservableObject {
         isLoading = true
         defer { isLoading = false }
         do{
-            let response: APIResponse<[FAQModel]> = try await APIClient.shared.request(
+            let response: APIResponse<[FAQModel]> = try await APIClient.shared.request( // can replace APIClient with APIClientAF
                 endpoint: EndPoints.faq,
                 method: .GET
             )
